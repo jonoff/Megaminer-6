@@ -1,0 +1,3 @@
+libclient.so
+*.pyc
+*.gamelog
