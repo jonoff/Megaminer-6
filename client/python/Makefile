@@ -1,7 +1,7 @@
 all: libclient.so
 
 submit: libclient.so
-	@echo "$(shell cd ..;sh submit.sh python)"
+	$(shell cd ..;sh submit.sh python)
 
 
 libclient.so: ../c/*.cpp ../c/*.h

@@ -13,7 +13,7 @@ override CPPFLAGS += -Isexp
 all: client
 
 submit: client
-	@echo "$(shell cd ..;sh submit.sh c)"
+	$(shell cd ..;sh submit.sh c)
 
 
 %.d: %.cpp
