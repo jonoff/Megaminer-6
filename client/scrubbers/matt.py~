@@ -1,0 +1,38 @@
+# -*- coding: iso-8859-1 -*-
+#-*-python-*-
+from BaseAI import BaseAI
+from GameObject import *
+import util
+from jon import *
+
+import random
+
+direction = 'lrud'
+
+class AI(BaseAI):
+    """The class implementing gameplay logic."""
+    @staticmethod
+    def username():
+        return "mst00132"
+
+    @staticmethod
+    def password():
+        return "S690n6r64"
+
+    def init(self):
+        pass
+
+    def end(self):
+        pass
+
+    def run(self):
+        for bot in self.bots:
+            print bot
+            if bot.getOwner() == self.playerID():
+                bot.move(random.choice(direction))
+                if bot.getBuildRate():
+                    bot.build(random.choice(self.types), bot.getX()+1, bot.getY(), 1)
+        return 1
+
+    def __init__(self, conn):
+        BaseAI.__init__(self, conn)
